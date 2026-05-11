@@ -389,3 +389,45 @@ function playPanelAnimation(type) {
   else
     elements.quizPanel.classList.add("incorrect-shake");
 }
+
+window.addEventListener("DOMContentLoaded", function () {
+  const loadMapButton = document.getElementById("loadMapButton");
+
+  if (loadMapButton) {
+    loadMapButton.addEventListener("click", loadGoogleMapsApi);
+  }
+});
+
+
+
+// Api specific stuff to not have the paste my api key in the html file
+// takes a value from text box in header and when button is press
+// calls initMap() to populate the map
+window.addEventListener("DOMContentLoaded", function () {
+  const loadMapButton = document.getElementById("loadMapButton");
+
+  if (loadMapButton) {
+    loadMapButton.addEventListener("click", loadGoogleMapsApi);
+  }
+});
+
+function loadGoogleMapsApi() {
+  const apiKeyInput = document.getElementById("apiKeyInput");
+  const apiKey = apiKeyInput.value.trim();
+
+  // exception catches
+  if (apiKey === "")
+    return;
+
+  if (window.google && window.google.maps)
+    return;
+
+  // the script we need to run the api key
+  const script = document.createElement("script");
+  script.id = "googleMapsScript";
+  script.async = true;
+  script.src =
+    `https://maps.googleapis.com/maps/api/js?key=${apiKey}&loading=async&callback=initMap`;
+
+  document.body.appendChild(script);
+}

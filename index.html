@@ -13,9 +13,15 @@
 <body>
     <section class="content-wrap">
         <header>
-            <div class="profile-header">
-                <h1>CSUN Map Quiz</h1>
-            </div>
+            <h1>CSUN Map Quiz</h1>
+            
+            <input id="apiKeyInput" 
+                    type="password" 
+                    placeholder="Paste Google Maps API key">
+
+            <button id="loadMapButton" type="button">
+                Load Map
+            </button>
         </header>
 
         <div class="main-box">
@@ -59,7 +65,8 @@
     </footer>
 
     <!-- Not actually putting my api key and uploading it -->
-    <script async src="https://maps.googleapis.com/maps/api/js?key=temp&loading=async&callback=initMap"></script>
-    </body>
+     <!-- using a function and input box to allow entering a api key -->
+    <!-- <script async src="https://maps.googleapis.com/maps/api/js?key=temp&loading=async&callback=initMap"></script> -->
+</body>
 
 </html>
