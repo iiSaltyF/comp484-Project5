@@ -1,0 +1,163 @@
+/* Color Palette
+header black - #0d1117
+header highlight - #30363d
+
+text white - #c6cdd5
+main-box greyish - #14181e
+
+card backg - #7aa2ff14
+card border - #7aa2ffd9
+*/
+
+/* #region Global Styles */
+/* Grabbed from my resume just so I dont 
+   have to be messing too many values and 
+   keeping track of all my classes  */
+
+html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #14181e;
+    height: 100%;
+    margin: 0;
+    margin: 0;
+    padding: 0;
+    color: #c6cdd5;
+    font-family: "Oswaldo", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    font-family: "Archivo Black", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+p {
+    font-size: 18px;
+}
+
+header {
+    /* display: flex; */
+    /* flex-direction: column; */
+    background: #0d1117;
+    border-bottom: 1px solid #30363d;
+    /* padding: 12px 16px 0; */
+    /* overflow: auto; */
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* #endregion Global Styles */
+
+
+/* #region Header and Footer */
+/* Summary of Resume */
+header p {
+    font-size: 15px;
+
+}
+
+footer {
+    /* padding-bottom: 8px; */
+    font-size: 15px;
+    text-align: center;
+}
+
+footer h2 {
+    font-size: 20px;
+}
+
+footer p {
+    font-size: 10px;
+}
+
+
+
+.profile-img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+/* #endregion Header and Footer */
+
+
+/* #region Main Body Things */
+.main-box {
+    display: flex;
+    flex-direction: row;
+    background-color: #14181e;
+    max-width: 100%;
+    min-height: 100%;
+}
+
+.content-wrap {
+    background-color: #14181e;
+    border-bottom: 1px solid #30363d;
+    width: 100%;
+}
+
+.card {
+    border-left: 4px solid #7aa2ffd9;
+    border-right: 4px solid #7aa2ffd9;
+    padding: 2px 18px;
+    background: #8fb0ff14;
+    color: #c6cdd5;
+    border-radius: 12px;
+    width: 90px;
+    height: 30px;
+    margin-left: 14px;
+    margin-bottom: 10px;
+}
+
+
+
+/* Start for assignment specific css */
+
+.Left-side {
+    width: 35%;
+    padding-left: 10px;
+}
+
+.Right-side {
+    width: 60%;
+}
+
+#map {
+    background-color: white;
+    min-width: 100%;
+    height: 650px;
+}
+
+div.correct {
+    background-color: green;
+}
+
+div.incorrect {
+    background-color: rgb(145, 3, 3);
+}

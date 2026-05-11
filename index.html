@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comp 484-Project 5</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <section class="content-wrap">
+        <header>
+            <div class="profile-header">
+                <h1>CSUN Map Quiz</h1>
+            </div>
+        </header>
+
+        <div class="main-box">
+            <section class="Left-side">
+                <h2>Quiz Section</h2>
+
+                <div class="element-main" style="justify-content: flex-start;">
+
+                    <div class="quiz-card">
+                        <h3>Current Location</h3>
+                        <hr>
+                        <p id="question">Loading quiz...</p>
+                        <p id="progress">Question 1 of 5</p>
+                    </div>
+                    <hr>
+                    <div class="quiz-card">
+                        <h3>Result</h3>
+                        <div id="feedback"></div>
+                    </div>
+
+                    <hr>
+                    <div class="quiz-card">
+                        <h3>Score:</h3>
+                        <p id="score"></p>
+                        <p id="timer">Time: 0s</p>
+                        <p id="highScore">High Score: none yet</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="Right-side">
+                <div id="map"></div>
+            </section>
+        </div>
+
+        <button id="restartButton" class="card" type="button">Reset</button>
+    </section>
+
+    <footer class="content-wrap">
+    </footer>
+
+    <!-- Not actually putting my api key and uploading it -->
+    <script async src="https://maps.googleapis.com/maps/api/js?key=temp&loading=async&callback=initMap"></script>
+    </body>
+
+</html>
