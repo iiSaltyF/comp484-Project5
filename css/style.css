@@ -146,10 +146,11 @@ footer p {
 
 .Right-side {
     width: 60%;
+    display: flex;
 }
 
 #map {
-    background-color: white;
+    background-color: rgb(67, 66, 66);
     min-width: 100%;
     height: 650px;
 }
@@ -160,4 +161,60 @@ div.correct {
 
 div.incorrect {
     background-color: rgb(145, 3, 3);
+}
+
+
+/* learning animation using keyframes */
+
+.correct-pulse {
+    animation: correctPulse .7s ease-in-out;
+}
+
+.incorrect-shake {
+    animation: incorrectShake 1s ease-in-out;
+}
+
+/* box-shadow: offset-x offset-y size color  */
+
+@keyframes correctPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 #00800000;
+    }
+
+    50% {
+        transform: scale(1.03);
+        box-shadow: 0 0 100px #008000f1;
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 #00800000;
+    }
+}
+
+@keyframes incorrectShake {
+    0% {
+        transform: translateX(0);
+        box-shadow: 0 0 0 #ff000000;
+    }
+
+    25% {
+        transform: translateX(-8px);
+        box-shadow: 0 0 100px #ff0000d1;
+    }
+
+    50% {
+        transform: translateX(8px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+        box-shadow: 0 0 0 #ff000000;
+    }
+
 }

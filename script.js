@@ -17,7 +17,8 @@ const DOM_IDS = {
   progress: "progress",
   timer: "timer",
   highScore: "highScore",
-  restartButton: "restartButton"
+  restartButton: "restartButton",
+  quizPanel: "quizPanel"
 };
 
 let map;
@@ -28,6 +29,7 @@ let quizFinished = false;
 let rectangles = [];
 let startTime = null;
 let timerInterval = null;
+let quizPanel;
 
 const elements = {};
 
@@ -40,6 +42,7 @@ function cacheElements() {
   elements.timer = document.getElementById(DOM_IDS.timer);
   elements.highScore = document.getElementById(DOM_IDS.highScore);
   elements.restartButton = document.getElementById(DOM_IDS.restartButton);
+  elements.quizPanel = document.getElementById(DOM_IDS.quizPanel);
 }
 
 
@@ -197,10 +200,12 @@ function handleMapDoubleClick(event) {
     correctCount += 1;
     addFeedback(`Where is ${currentLocation.name}?`, "Your answer is correct!", "correct");
     drawTargetArea(currentLocation.bounds, "green");
+    playPanelAnimation("correct");
   } else {
     incorrectCount += 1;
     addFeedback(`Where is ${currentLocation.name}?`, "Sorry, wrong location.", "incorrect");
     drawTargetArea(currentLocation.bounds, "red");
+    playPanelAnimation("wrong");
   }
 
   currentQuestionIndex += 1;
@@ -369,4 +374,18 @@ function drawTargetArea(bounds, color) {
   });
 
   rectangles.push(rectangle);
+}
+
+// animation specific helper
+function playPanelAnimation(type) {
+  if (!elements.quizPanel) 
+    return;
+  elements.quizPanel.classList.remove("correct-pulse", "incorrect-shake");
+
+  void elements.quizPanel.offsetWidth;
+
+  if (type === "correct")
+    elements.quizPanel.classList.add("correct-pulse");
+  else
+    elements.quizPanel.classList.add("incorrect-shake");
 }
